@@ -13,12 +13,12 @@
   </head>
   <body>
 
-    <h1>3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
+    <h1 class="mb-5">3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
     
     
     <h2>3 boites, responsive avec bootstrap, usage des classe et breakpoints</h2>
     <div class="container-fluid border mb-5">
-      <div class="row">
+      <div class="row text-center">
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
@@ -34,11 +34,11 @@
         vertical-align: top
       }
     </style>
-    <div class="container-fluid border">
+    <div class="container-fluid border mb-5">
       <div class="text-center">
         <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
       </div>
     </div>
     
@@ -72,15 +72,49 @@
       }
 
     </style>
-    <div class="container-fluid border">
-      <div class="flex_conteneur">
+    <div class="container-fluid border mb-5">
+      <div class="flex_conteneur text-center">
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
       </div>
     </div>
     
     
+    
+    <h2>3 boites, responsive manuel avec grid</h2>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      .grid-container h2 {
+        width:100%; 
+      }
+      @media screen and (max-width: 1200px)
+      {
+        .flex_responsive {
+          width:50%; 
+          display: flex;
+        }
+      }
+      @media screen and (max-width: 768px)
+      {
+        .flex_responsive {
+          width:100%; 
+          display: flex;
+        }
+      }
+
+    </style>
+    <div class="container-fluid border mb-5">
+      <div class="grid-container text-center">
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      </div>
+    </div>
     
   </body>
 </html>
