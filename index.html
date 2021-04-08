@@ -26,19 +26,35 @@
     </div>
     
     
-    <h2>3 boites, mauvais responsive avec largeur fixe</h2>
+    <h2>3 boites, responsive avec inline-block</h2>
     <style>
-      .bad_responsive {
-        width:600px; 
+      .inline-responsive {
+        width:33.33%; /* pas de largeur fixe */
         display: inline-block; 
         vertical-align: top
       }
+      .inline-block-fix {
+        font-size: 0;
+      }
+      @media screen and (max-width: 1200px)
+      {
+        .inline-responsive {
+          width:50%;
+        }
+      }
+      @media screen and (max-width: 768px)
+      {
+        .inline-responsive {
+          width:100%;
+        }
+      }
+      
     </style>
     <div class="container-fluid border mb-5">
-      <div class="text-center">
-        <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      <div class="inline-block-fix text-center">
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
       </div>
     </div>
     
@@ -70,7 +86,6 @@
           display: flex;
         }
       }
-
     </style>
     <div class="container-fluid border mb-5">
       <div class="flex_conteneur text-center">
@@ -86,7 +101,7 @@
     <style>
       .grid-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr; /* 1fr = 1 fraction => ici 3 fractions donc espace divisé en 3 */
         gap: 20px;
       }
       .grid-container h2 {
@@ -94,16 +109,14 @@
       }
       @media screen and (max-width: 1200px)
       {
-        .flex_responsive {
-          width:50%; 
-          display: flex;
+        .grid-container {
+          grid-template-columns: 1fr 1fr;
         }
       }
       @media screen and (max-width: 768px)
       {
-        .flex_responsive {
-          width:100%; 
-          display: flex;
+        .grid-container {
+          grid-template-columns: 1fr;
         }
       }
 
