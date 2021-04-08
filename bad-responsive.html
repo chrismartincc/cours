@@ -1,1 +1,126 @@
+<!doctype html>
+  <html lang="fr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <title>bad responsive exemple</title>
 
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+  </head>
+  <body class="p-4">
+
+    <h1 class="mb-5">3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
+    
+    
+    <h2>3 boites, responsive avec bootstrap, usage des classes et breakpoints</h2>
+    <h3>Cross browser compatible (vieux IE, et autres)</h3>
+    <div class="container-fluid border mb-5">
+      <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      </div>
+    </div>
+    
+    
+    <h2>3 boites, responsive manuel avec inline-block et largeur fixe</h2>
+    <h3>la largeur fixe rend l'alignement elastique</h3>
+    <style>
+      .inline-responsive {
+        width:500px;
+        display: inline-block; 
+        vertical-align: top
+      }
+      .inline-block-fix {
+        font-size: 0; /* ici, si on ne met pas à 0 il y aura des espaces invisible qui s'incrusteront et vont casser notre largeur relative */
+      }
+    </style>
+    <div class="border mb-5">
+      <div class="inline-block-fix">
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      </div>
+    </div>
+    
+    
+    <h2>3 boites, responsive manuel avec flex (ou autre) avec des margins</h2>
+    <h3>Les margins s'ajoutent à la taille relative des boites, un margin:1% et un width: 33.33% vont donner une boite de 33.33% + 1% à doite + 1% à gauche = 35.33%</h3>
+    <style>
+      .flex_conteneur {
+        display: flex;
+        flex-wrap: wrap; /* si on met pas wrap, flex va vouloir tout faire tenir dans cette boite */
+      }
+      .flex_responsive {
+        width:31.33%; 
+        margin: 1%;
+        outline: 1% solid purple;
+        display: flex;
+      }
+      .flex_responsive h2 {
+        width:100%; 
+      }
+      @media screen and (max-width: 1199px)
+      {
+        .flex_responsive {
+          width:50%; 
+          display: flex;
+        }
+      }
+      @media screen and (max-width: 767px)
+      {
+        .flex_responsive {
+          width:100%; 
+          display: flex;
+        }
+      }
+    </style>
+    <div class="border mb-5">
+      <div class="flex_conteneur">
+        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      </div>
+    </div>
+    
+    
+    
+    <h2>3 boites, responsive manuel avec grid</h2>
+    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 1fr = 1 fraction => ici 3 fractions donc espace divisé en 3 */
+        gap: 0;
+      }
+      .grid-container h2 {
+        width:100%; 
+      }
+      @media screen and (max-width: 1199px)
+      {
+        .grid-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media screen and (max-width: 767px)
+      {
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+    </style>
+    <div class="border mb-5">
+      <div class="grid-container">
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
