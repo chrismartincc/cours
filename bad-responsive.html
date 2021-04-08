@@ -85,38 +85,7 @@
       </div>
     </div>
     
-    <h2>3 boites, responsive manuel avec inline-block media queries partant de l'ecran le plus petit au plus grand</h2>
-    <h3>Garder à l'esprit le sens dans lequel s'appliquent les media queries</h3>
-    <style>
-      .inline-responsive-mobilefirst {
-        width:100%;
-        display: inline-block; 
-        vertical-align: top
-      }
-      .inline-block-fix {
-        font-size: 0; /* ici, si on ne met pas à 0 il y aura des espaces invisible qui s'incrusteront et vont casser notre largeur relative */
-      }
-      
-      @media screen and (min-width: 768px)
-      {
-        .inline-responsive-mobilefirst {
-          width:50%;
-        }
-      }
-      @media screen and (min-width: 1200px)
-      {
-        .inline-responsive-mobilefirst {
-          width:33.33%;
-        }
-      }
-    </style>
-    <div class="border mb-5">
-      <div class="inline-block-fix">
-        <div class="inline-responsive-mobilefirst p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="inline-responsive-mobilefirst p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="inline-responsive-mobilefirst p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
-      </div>
-    </div>
+    
     
   </body>
 </html>
