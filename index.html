@@ -41,6 +41,9 @@
     
     <h1>3 boites, mauvais responsive car taille fixe</h1>
     <style>
+      .flex_conteneur {
+        display: flex;
+      }
       .flex_responsive {
         width:33.33%; 
         display: flex;
@@ -48,14 +51,14 @@
       .flex_responsive h2 {
         width:100%; 
       }
-      @media screen and (max-width: 1201px)
+      @media screen and (max-width: 1200px)
       {
         .flex_responsive {
           width:50%; 
           display: flex;
         }
       }
-      @media screen and (max-width: 769px)
+      @media screen and (max-width: 768px)
       {
         .flex_responsive {
           width:100%; 
@@ -65,9 +68,11 @@
 
     </style>
     <div class="container-fluid border">
+      <div class="flex_conteneur">
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+      </div>
     </div>
     
     
