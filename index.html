@@ -12,126 +12,17 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
   </head>
   <body class="p-4">
-
-    <h1 class="mb-5">3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
-    
-    
-    <h2>3 boites, responsive avec bootstrap, usage des classes et breakpoints</h2>
-    <h3>Cross browser compatible (vieux IE, et autres)</h3>
+  
     <div class="container-fluid border mb-5">
       <div class="row">
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+        <div class="col-12">
+          <h1 class="mb-5">Supports de cours</h1>
+            <h2>HTML CSS - Responsive</h2>
+              <h3><a href="responsive.html">Le bon responsive</h3>
+              <h3><a href="responsive.html">Les erreurs possibles</h3>
+        </div>
       </div>
     </div>
-    
-    
-    <h2>3 boites, responsive manuel avec inline-block</h2>
-    <h3>Cross browser compatible (vieux IE, et autres)</h3>
-    <style>
-      .inline-responsive {
-        width:33.33%; /* pas de largeur fixe */
-        display: inline-block; 
-        vertical-align: top
-      }
-      .inline-block-fix {
-        font-size: 0; /* attention la taille de police se transmet aux enfants, il faudra définir la taille de font aux enfants */
-      }
-      @media screen and (max-width: 1199px)
-      {
-        .inline-responsive {
-          width:50%;
-        }
-      }
-      @media screen and (max-width: 767px)
-      {
-        .inline-responsive {
-          width:100%;
-        }
-      }
-      
-    </style>
-    <div class="border mb-5">
-      <div class="inline-block-fix">
-        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
-      </div>
-    </div>
-    
-    
-    <h2>3 boites, responsive manuel avec flex (plus lourd que bootstrap)</h2>
-    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
-    <style>
-      .flex_conteneur {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .flex_responsive {
-        width:33.33%; 
-        display: flex;
-      }
-      .flex_responsive h2 {
-        width:100%; 
-      }
-      @media screen and (max-width: 1199px)
-      {
-        .flex_responsive {
-          width:50%; 
-          display: flex;
-        }
-      }
-      @media screen and (max-width: 767px)
-      {
-        .flex_responsive {
-          width:100%; 
-          display: flex;
-        }
-      }
-    </style>
-    <div class="border mb-5">
-      <div class="flex_conteneur">
-        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
-      </div>
-    </div>
-    
-    
-    
-    <h2>3 boites, responsive manuel avec grid</h2>
-    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
-    <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* 1fr = 1 fraction => ici 3 fractions donc espace divisé en 3 */
-        gap: 0;
-      }
-      .grid-container h2 {
-        width:100%; 
-      }
-      @media screen and (max-width: 1199px)
-      {
-        .grid-container {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media screen and (max-width: 767px)
-      {
-        .grid-container {
-          grid-template-columns: 1fr;
-        }
-      }
-
-    </style>
-    <div class="border mb-5">
-      <div class="grid-container">
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
-      </div>
-    </div>
-    
+  
   </body>
 </html>
