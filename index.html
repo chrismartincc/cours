@@ -17,8 +17,9 @@
     
     
     <h2>3 boites, responsive avec bootstrap, usage des classe et breakpoints</h2>
+    <h3>Cross browser compatible (vieux IE, et autres)</h3>
     <div class="container-fluid border mb-5">
-      <div class="row text-center">
+      <div class="row">
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
@@ -27,6 +28,7 @@
     
     
     <h2>3 boites, responsive avec inline-block</h2>
+    <h3>Cross browser compatible (vieux IE, et autres)</h3>
     <style>
       .inline-responsive {
         width:33.33%; /* pas de largeur fixe */
@@ -34,15 +36,15 @@
         vertical-align: top
       }
       .inline-block-fix {
-        font-size: 0;
+        font-size: 0; /* attention la taille de police se transmet aux enfants, il faudra définir la taille de font aux enfants */
       }
-      @media screen and (max-width: 1200px)
+      @media screen and (max-width: 1199px)
       {
         .inline-responsive {
           width:50%;
         }
       }
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 767px)
       {
         .inline-responsive {
           width:100%;
@@ -50,8 +52,8 @@
       }
       
     </style>
-    <div class="container-fluid border mb-5">
-      <div class="inline-block-fix text-center">
+    <div class="border mb-5">
+      <div class="inline-block-fix">
         <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
@@ -60,6 +62,7 @@
     
     
     <h2>3 boites, responsive manuel avec flex (plus lourd que bootstrap)</h2>
+    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
     <style>
       .flex_conteneur {
         display: flex;
@@ -72,14 +75,14 @@
       .flex_responsive h2 {
         width:100%; 
       }
-      @media screen and (max-width: 1200px)
+      @media screen and (max-width: 1199px)
       {
         .flex_responsive {
           width:50%; 
           display: flex;
         }
       }
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 767px)
       {
         .flex_responsive {
           width:100%; 
@@ -87,8 +90,8 @@
         }
       }
     </style>
-    <div class="container-fluid border mb-5">
-      <div class="flex_conteneur text-center">
+    <div class="border mb-5">
+      <div class="flex_conteneur">
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
@@ -98,6 +101,7 @@
     
     
     <h2>3 boites, responsive manuel avec grid</h2>
+    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
     <style>
       .grid-container {
         display: grid;
@@ -107,13 +111,13 @@
       .grid-container h2 {
         width:100%; 
       }
-      @media screen and (max-width: 1200px)
+      @media screen and (max-width: 1199px)
       {
         .grid-container {
           grid-template-columns: 1fr 1fr;
         }
       }
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 767px)
       {
         .grid-container {
           grid-template-columns: 1fr;
@@ -121,8 +125,8 @@
       }
 
     </style>
-    <div class="container-fluid border mb-5">
-      <div class="grid-container text-center">
+    <div class="border mb-5">
+      <div class="grid-container">
         <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
