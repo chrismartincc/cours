@@ -45,14 +45,17 @@
         width:33.33%; 
         display: flex;
       }
-      @media screen and (max-width: 1000px) and (min-width: 601px)
+      .flex_responsive h2 {
+        width:100%; 
+      }
+      @media screen and (max-width: 1201px)
       {
         .flex_responsive {
           width:50%; 
           display: flex;
         }
       }
-      @media screen and (max-width: 600px)
+      @media screen and (max-width: 769px)
       {
         .flex_responsive {
           width:100%; 
@@ -62,11 +65,9 @@
 
     </style>
     <div class="container-fluid border">
-      <div class="row">
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="flex_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-      </div>
     </div>
     
     
