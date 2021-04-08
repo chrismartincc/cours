@@ -56,9 +56,9 @@
         flex-wrap: wrap; /* si on met pas wrap, flex va vouloir tout faire tenir dans cette boite */
       }
       .flex_responsive {
-        width:31.33%; 
-        margin: 1%;
-        outline: 1% solid purple;
+        width:33.33%; 
+        margin: 0 1%;
+        background-color: purple;
         display: flex;
       }
       .flex_responsive h2 {
@@ -67,15 +67,13 @@
       @media screen and (max-width: 1199px)
       {
         .flex_responsive {
-          width:50%; 
-          display: flex;
+          width:50%;
         }
       }
       @media screen and (max-width: 767px)
       {
         .flex_responsive {
-          width:100%; 
-          display: flex;
+          width:100%;
         }
       }
     </style>
@@ -87,38 +85,36 @@
       </div>
     </div>
     
-    
-    
-    <h2>3 boites, responsive manuel avec grid</h2>
-    <h3>Moins compatible (IE 10 et safari peuvent poser problème)</h3>
+    <h2>3 boites, responsive manuel avec inline-block media queries partant de l'ecran le plus petit au plus grand</h2>
+    <h3>Garder à l'esprit le sens dans lequel s'appliquent les media queries</h3>
     <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* 1fr = 1 fraction => ici 3 fractions donc espace divisé en 3 */
-        gap: 0;
+      .inline-responsive {
+        width:100%;
+        display: inline-block; 
+        vertical-align: top
       }
-      .grid-container h2 {
-        width:100%; 
+      .inline-block-fix {
+        font-size: 0; /* ici, si on ne met pas à 0 il y aura des espaces invisible qui s'incrusteront et vont casser notre largeur relative */
       }
-      @media screen and (max-width: 1199px)
+      
+      @media screen and (min-width: 768px)
       {
-        .grid-container {
-          grid-template-columns: 1fr 1fr;
+        .flex_responsive {
+          width:50%;
         }
       }
-      @media screen and (max-width: 767px)
+      @media screen and (min-width: 1200px)
       {
-        .grid-container {
-          grid-template-columns: 1fr;
+        .flex_responsive {
+          width:33.33%;
         }
       }
-
     </style>
     <div class="border mb-5">
-      <div class="grid-container">
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
-        <div class="p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
+      <div class="inline-block-fix">
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
+        <div class="inline-responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 3</h2></div>
       </div>
     </div>
     
