@@ -16,7 +16,7 @@
     <h1>3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
     
     
-    
+    <h2>3 boites, responsive avec bootstrap, usage des classe et breakpoints</h2>
     <div class="container-fluid border mb-5">
       <div class="row">
         <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
@@ -26,7 +26,7 @@
     </div>
     
     
-    <h2>3 boites, mauvaise responsive avec largeur fixe</h2>
+    <h2>3 boites, mauvais responsive avec largeur fixe</h2>
     <style>
       .bad_responsive {
         width:600px; 
@@ -35,7 +35,7 @@
       }
     </style>
     <div class="container-fluid border">
-      <div>
+      <div class="text-center">
         <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 1</h2></div>
         <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
         <div class="bad_responsive p-4"><h2 class="border h-100 bg-dark text-white">Boite 2</h2></div>
@@ -43,10 +43,11 @@
     </div>
     
     
-    <h2>3 boites, responsive manuel avec flex</h2>
+    <h2>3 boites, responsive manuel avec flex (plus lourd que bootstrap)</h2>
     <style>
       .flex_conteneur {
         display: flex;
+        flex-wrap: wrap;
       }
       .flex_responsive {
         width:33.33%; 
