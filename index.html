@@ -13,13 +13,31 @@
   </head>
   <body>
 
-    <h1>Hello !</h1>
-    <div class="container">
+    <h1>3 boites, responsive 3 si grand écran, 2 si tablette, 1 si plus petit</h1>
+    <div class="container border mb-5">
       <div class="row">
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2>test</h2></div>
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2>test</h2></div>
-        <div class="col-12 col-md-6 col-xl-4 p-4"><h2>test</h2></div>
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2 class="border h-100">Boite 1</h2></div>
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2>Boite 2</h2></div>
+        <div class="col-12 col-md-6 col-xl-4 p-4"><h2>Boite 3</h2></div>
       </div>
     </div>
+    
+    <style>
+      .bad_responsive {
+        width:300px; 
+        display: inline-block; 
+        vertical-align: top
+      }
+    </style>
+    <h1>3 boites, mauvais responsive car taille fixe</h1>
+    <div class="container border">
+      <div class="bad_responsive"><h2 class="border h-100">Boite 1</h2></div>
+      <div class="bad_responsive"><h2 class="border h-100">Boite 1</h2></div>
+      <div class="bad_responsive"><h2 class="border h-100">Boite 1</h2></div>
+      
+    </div>
+    
+    
+    
   </body>
 </html>
